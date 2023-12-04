@@ -20,4 +20,11 @@ if (day == null)
     return;
 }
 
-day.Solve($"./inputs/day{args[0]}.txt");
+if (!File.Exists($"./inputs/day{args[0]}.txt"))
+{
+    Console.WriteLine("Unable to find input file");
+    return;
+}
+
+var input = File.ReadAllLines($"./inputs/day{args[0]}.txt");
+day.Solve(input);

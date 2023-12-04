@@ -2,16 +2,10 @@ namespace Advent2023.Days;
 
 public class Day2 : IDay
 {
-    public void Solve(string inputPath)
+    public void Solve(string[] input)
     {
-        if (!File.Exists(inputPath))
-        {
-            Console.WriteLine("Input file not found");
-            return;
-        }
-        var gameStrings = File.ReadAllLines(inputPath);
-        // Part1(gameStrings);
-        Part2(gameStrings);
+        Part1(input);
+        Part2(input);
     }
 
     private void Part1(string[] gameStrings)

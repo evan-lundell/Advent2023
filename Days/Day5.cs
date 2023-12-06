@@ -82,12 +82,6 @@ public class Mapping (MappingRange[] ranges)
         var mappedRanges = new List<LongRange>();
         foreach (var range in ranges)
         {
-            // var matchedRanges = Ranges.Where(r => (range.Start >= r.Source && range.Start < r.SourceEnd)
-            //                                        || (range.End > r.Source && range.End <= r.SourceEnd)
-            //                                        || (range.Start < r.Source && range.End > r.SourceEnd))
-            //     .OrderBy(r => r.Source)
-            //     .ToArray();
-
             var matchedRanges = Ranges.Where(r => !(range.End <= r.Source || range.Start >= r.SourceEnd))
                 .OrderBy(r => r.Source)
                 .ToArray();

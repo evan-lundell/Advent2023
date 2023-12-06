@@ -16,8 +16,14 @@ public class Day5 : IDay
         var lightToTemperature = Mapping.CreateMapping(input[100..129]);
         var temperatureToHumidity = Mapping.CreateMapping(input[131..162]);
         var humidityToLocation = Mapping.CreateMapping(input[164..]);
+        var start = DateTime.Now;
         Part1(seeds, seedToSoilMapping, soilToFertilizer, fertilizerToWater, waterToLight, lightToTemperature, temperatureToHumidity, humidityToLocation);
+        var duration = DateTime.Now - start;
+        Console.WriteLine($"Part1 Runtime: {duration.TotalMilliseconds}");
+        start = DateTime.Now;
         Part2(seeds, seedToSoilMapping, soilToFertilizer, fertilizerToWater, waterToLight, lightToTemperature, temperatureToHumidity, humidityToLocation);
+        duration = DateTime.Now - start;
+        Console.WriteLine($"Part2 Runtime: {duration.TotalMilliseconds}");
     }
 
     private void Part1(
